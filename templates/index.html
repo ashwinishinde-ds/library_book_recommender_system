@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Recommender System</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
+<style>
+
+body{
+    background:black;
+}
+
+.text-white{
+    color:white;
+}
+
+/* ⭐ FLEXBOX GRID FIX (MAIN SOLUTION) */
+.book-row{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* column override */
+.book-col{
+    width:25%;
+    padding:10px;
+}
+
+@media(max-width:992px){
+    .book-col{ width:50%; }
+}
+
+@media(max-width:600px){
+    .book-col{ width:100%; }
+}
+
+/* card */
+.book-card{
+    background:#111;
+    padding:15px;
+    border-radius:10px;
+    height:100%;
+    min-height:420px;
+}
+
+.book-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    margin-bottom:5px;
+}
+
+/* navbar */
+.navbar-brand{
+    color:white !important;
+    font-weight:bold;
+}
+
+.nav > li > a{
+    color:white !important;
+}
+
+.nav > li > a:hover{
+    background:#008d4c !important;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" style="background:#00a65a;border:none;">
+<div class="container-fluid">
+
+<div class="navbar-header">
+<a class="navbar-brand">My Book Recommender</a>
+</div>
+
+<ul class="nav navbar-nav">
+<li class="active"><a href="/">Home</a></li>
+<li><a href="/recommend">Recommend</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h1 class="text-white" style="font-size:50px;margin-bottom:30px;">
+Top 50 Books
+</h1>
+
+<!-- ⭐ FLEX ROW -->
+<div class="book-row">
+
+{% for i in range(book_name|length) %}
+
+<div class="book-col">
+<div class="book-card">
+
+<img src="{{ image[i] }}">
+
+<p class="text-white"><strong>{{ book_name[i] }}</strong></p>
+<p class="text-white">{{ author[i] }}</p>
+<p class="text-white">Votes - {{ votes[i] }}</p>
+<p class="text-white">Rating - {{ rating[i] }}</p>
+
+</div>
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>
