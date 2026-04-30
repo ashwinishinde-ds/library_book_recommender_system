@@ -91,7 +91,3 @@ Live URL: https://library-book-recommendation-system-zkv8.onrender.com/
 * User login system
 * Search autocomplete
 * More advanced filtering
-
-## Author
-
-Ashwini Shinde
