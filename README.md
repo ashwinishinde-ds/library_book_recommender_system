@@ -94,4 +94,4 @@ Live URL: https://library-book-recommendation-system-zkv8.onrender.com/
 
 ## Author
 
-Pratik Shere
+Ashwini Shinde
